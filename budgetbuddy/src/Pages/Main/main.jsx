@@ -41,13 +41,12 @@ const Main = () => {
             <div className="image-container">
                 <img src="/ProgressIndicator.png" alt="Progress Indicator" />
             </div>
-            <div className="white-box">
+            <div className="main-white-box">
                 <div className="main-content">
                     <div className="left-column">
                         <h3>Your Top 4 Categories</h3>
                     </div>
                     <div className="right-column">
-                        <label htmlFor="quickactions">Select Category:</label>
                         <div className="select-container">
                             <select id="quickactions" onChange={handleSelectChange}>
                                 <option value="quickActions" selected>Quick Actions</option>

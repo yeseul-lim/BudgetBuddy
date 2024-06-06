@@ -1,5 +1,6 @@
 import React from "react";
 import './account.css';
+import { Link } from 'react-router-dom';
 
 const Account = () => {
     return (
@@ -48,7 +49,7 @@ const Account = () => {
                 </section>
 
             </div>
-            <button className="add-account-button">+ Add Account</button>
+            <Link to="/addAccount" className="add-account-button">+ Add Account</Link>
         </div>
     );
 };

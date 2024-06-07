@@ -127,3 +127,33 @@ input[type="text"] {
     color: #333;
     margin-top: 50px;
 }
+
+.alert-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #59A460;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.loading-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: white;
+    background-color: #59A460;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

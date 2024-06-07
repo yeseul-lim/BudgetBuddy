@@ -32,7 +32,7 @@ const Account = () => {
                                 <img src="/Chase.png" alt="Chase Bank" />
                                 <div className="account-info">
                                     <div className="cardname">Chase Credit</div>
-                                    <p>x0000</p>
+                                    <p>x8888</p>
                                     <p>Balance: $250.87</p>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@ const Account = () => {
                                 <img src="/BOA.png" alt="BOA Bank" />
                                 <div className="account-info">
                                     <div className="cardname">BOA Credit</div>
-                                    <p>x1234</p>
+                                    <p>x5678</p>
                                     <p>Balance: $1,180.98</p>
                                 </div>
                             </div>

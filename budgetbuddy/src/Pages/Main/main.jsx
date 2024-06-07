@@ -20,9 +20,6 @@ const Main = () => {
             case 'link':
                 navigate('/account');
                 break;
-            case 'calendar':
-                navigate('/expenseCal');
-                break;
             default:
                 break;
         }
@@ -54,7 +51,6 @@ const Main = () => {
                                 <option value="add">Add Expense</option>
                                 <option value="edit">Edit Categories</option>
                                 <option value="link">Link Account</option>
-                                <option value="calendar">View Calendar</option>
                             </select>
                         </div>
                     </div>

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './addAccount.css';
 
 const AddAccount = () => {
     const [droppedImage, setDroppedImage] = useState(null);
+    const [showAlert, setShowAlert] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     const handleDragStart = (e, id) => {
         e.dataTransfer.setData("text/plain", id);
@@ -28,6 +32,19 @@ const AddAccount = () => {
             "6": "/usbank.png"
         };
         return imageMap[id];
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false);
+            setShowAlert(true);
+            setTimeout(() => {
+                setShowAlert(false);
+                navigate("/account");
+            }, 3000);
+        }, 2000);
     };
 
     return (
@@ -57,11 +74,13 @@ const AddAccount = () => {
                         <input type="text" id="bankingUsername" name="bankingUsername" />
                         <label htmlFor="bankingPassword">Banking Password</label>
                         <input type="text" id="bankingPassword" name="bankingPassword" />
-                        <button type="submit" className="submit-button">Submit</button>
+                        <button type="submit" className="submit-button" onClick={handleSubmit}>Submit</button>
                         <div className="submit-text">Your sign-on information is secured by encryption and will only be
                             shared with your financial institution.</div>
                     </div>
                 </section>
+                {isLoading && <div className="loading-spinner">Authenticating...</div>}
+                {showAlert && <div className="alert-popup">Your Account Will Be Added Shortly.</div>}
             </div>
         </div>
     );

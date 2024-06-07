@@ -45,7 +45,7 @@ const Expense = () => {
     <div className="expense-page">
       <div className="header-controls">
         <div className="slider-container">
-          <label className="slider-label" htmlFor="view-slider">View: </label>
+          <label className="slider-label" htmlFor="view-slider">Slide: </label>
           <input
             type="range"
             id="view-slider"
@@ -113,7 +113,7 @@ const Expense = () => {
         </div>
       ) : (
         <div className="calendar-view">
-          {/* Implement the calendar view here */}
+        <img src="expense_cal.png" alt=""  id ="expense_cal_img"/>
         </div>
       )}
     </div>

@@ -52,11 +52,13 @@ const App = () => {
   };
 
   const handleChartClick = (data, index) => {
-    setClickedCategory(data[index]);
+    console.log('Chart clicked:', data, index);
+    setClickedCategory(data.payload);
     toggleEditPopup();
   };
 
   const updateCategory = (updatedCategory) => {
+    console.log('Updating category:', updatedCategory);
     const updatedData = data.map((item) =>
       item.name === updatedCategory.name ? { ...updatedCategory } : item
     );
@@ -65,6 +67,7 @@ const App = () => {
   };
 
   const addCategory = (newCategory) => {
+    console.log('Adding category:', newCategory);
     setData([...data, newCategory]);
     toggleAddPopup();
   };
@@ -87,7 +90,7 @@ const App = () => {
                 outerRadius={145} // Reduce the size of the pie chart
                 fill="#8884d8"
                 dataKey="allocated"
-                onClick={(event, data, index) => handleChartClick(data, index)}
+                onClick={(data, index) => handleChartClick(data, index)}
               >
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -146,12 +149,14 @@ const EditPopupMenu = ({ onClose, clickedCategory, updateCategory }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log('Submitting edited category:', editedCategory);
     updateCategory(editedCategory); // Call updateCategory with editedCategory
   };
 
   // Make sure to update editedCategory when clickedCategory changes
   useEffect(() => {
     setEditedCategory(clickedCategory);
+    console.log('clickedCategory updated:', clickedCategory);
   }, [clickedCategory]);
 
   return (
@@ -198,6 +203,7 @@ const AddPopupMenu = ({ onClose, addCategory }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log('Adding new category:', newCategory);
     addCategory(newCategory); // Call addCategory with newCategory
   };
 

@@ -1,40 +1,60 @@
-import React, { useState } from "react";
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-import './budget.css';
+import React, { useState } from 'react';
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
+import './budget.css'; // Import your CSS file for styling
 
-const Budget = () => {
+const data = [
+  { name: 'Rent', value: 30 },
+  { name: 'Entertainment', value: 15 },
+  { name: 'Gas', value: 20 },
+  { name: 'Car Insurance', value: 10 },
+  { name: 'Internet', value: 9 },
+  { name: 'Savings', value: 15 },
+  { name: 'Misc.', value: 1 },
+];
 
-    const data = [
-        { name: 'Rent', value: 30 },
-        { name: 'Entertainment', value: 15 },
-        { name: 'Gas', value: 20 },
-        { name: 'Car Insurance', value: 10 },
-        { name: 'Internet', value: 9 },
-        { name: 'Savings', value: 15 },
-        { name: 'Misc.', value: 1 },
-      ];
-      
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#FF0000', '#AAAAAA', '#DDDDDD'];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#FF0000', '#AAAAAA', '#DDDDDD'];
+const RADIAN = Math.PI / 180;
 
-    const [isPopupVisible, setIsPopupVisible] = useState(false);
-
-    const togglePopup = () => {
-        setIsPopupVisible(!isPopupVisible);
-    };
-
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+    const radius = outerRadius + 20; // Position labels outside the slices
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  
     return (
-        <div className="App">
-            <div className="chart-container">
-                <button onClick={togglePopup}>Edit</button>
-                <div className="chart">
-                <PieChart width={400} height={400}>
+      <text
+        x={x}
+        y={y}
+        fill={COLORS[index % COLORS.length]}
+        textAnchor={x > cx ? 'start' : 'end'}
+        dominantBaseline="central"
+        fontSize={12} // Adjust font size if necessary
+      >
+        {`${data[index].name} ${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
+
+const App = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
+  return (
+    <div className="App">
+      <div className="chart-container">
+        <div className="chart">
+          
+            <ResponsiveContainer width="100%" height={400}>
+                <PieChart>
                     <Pie
                     data={data}
-                    cx={200}
-                    cy={200}
+                    cx="50%"
+                    cy="50%"
                     labelLine={false}
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                    outerRadius={150}
+                    label={renderCustomizedLabel}
+                    outerRadius={170} // Reduce the size of the pie chart
                     fill="#8884d8"
                     dataKey="value"
                     >
@@ -43,33 +63,34 @@ const Budget = () => {
                     ))}
                     </Pie>
                     <Tooltip />
-                    <Legend />
                 </PieChart>
-                </div>
-            <div className="table">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Percentage</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {data.map((entry, index) => (
-                        <tr key={index}>
-                        <td>{entry.name}</td>
-                        <td>{entry.value}%</td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-                </div>
-            </div>
-            {isPopupVisible && (
-                <div className="popup">
-                <PopupMenu onClose={togglePopup} />
-                </div>
-            )}
+            </ResponsiveContainer>
+          <button onClick={togglePopup}>Edit</button>
+        </div>
+        <div className="table">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((entry, index) => (
+                <tr key={index}>
+                  <td>{entry.name}</td>
+                  <td>{entry.value}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {isPopupVisible && (
+        <div className="popup">
+          <PopupMenu onClose={togglePopup} />
+        </div>
+      )}
     </div>
   );
 };
@@ -96,4 +117,4 @@ const PopupMenu = ({ onClose }) => {
   );
 };
 
-export default Budget;
+export default App;

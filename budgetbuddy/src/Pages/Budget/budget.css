@@ -5,19 +5,32 @@
   
   .chart-container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .chart img {
+  .chart {
+    position: relative;
+    width: 500px; /* Increase width to ensure labels fit */
+    margin: auto;
+    padding: 20px; /* Add padding to ensure labels are visible */
+  }
+  
+  .chart svg {
     max-width: 100%;
     height: auto;
   }
   
   .table {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
   
   .table table {
-    width: 100%;
+    width: 50%; /* Adjust this value to change the table width */
     border-collapse: collapse;
   }
   
@@ -66,3 +79,4 @@
   .popup-menu button {
     margin-top: 10px;
   }
+  

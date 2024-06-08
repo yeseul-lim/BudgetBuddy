@@ -28,12 +28,12 @@ const Main = () => {
     return (
         <div className="main-container">
             <div className="column">
-                <h1>Your Expenses</h1>
-                <h2>$1,835.90</h2>
+                <div className="main-text">Your Expenses</div>
+                <div className="main-text2">$1,835.90</div>
             </div>
             <div className="column">
-                <h1>Budget Left</h1>
-                <h2>$1,435.10</h2>
+            <div className="main-text">Budget Left</div>
+            <div className="main-text2">$1,435.10</div>
             </div>
             <div className="image-container">
                 <img src="/ProgressIndicator.png" alt="Progress Indicator" />

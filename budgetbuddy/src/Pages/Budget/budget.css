@@ -13,9 +13,9 @@
   
   .chart {
     position: relative;
-    width: 500px; /* Increase width to ensure labels fit */
+    width: 500px; 
     margin: auto;
-    padding: 20px; /* Add padding to ensure labels are visible */
+    padding: 20px;
   }
   
   .chart svg {
@@ -31,7 +31,7 @@
   }
   
   .table table {
-    width: 50%; /* Adjust this value to change the table width */
+    width: 50%; 
     border-collapse: collapse;
   }
   

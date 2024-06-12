@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-import './budget.css'; // Import your CSS file for styling
+import './budget.css'; 
 
 const initialData = [
   { name: 'Rent', allocated: 1000, used: 950 },
@@ -19,7 +19,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   if (index >= initialData.length) {
     return null;
   }
-  const radius = outerRadius + 20; // Position labels outside the slices
+  const radius = outerRadius + 20;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
@@ -30,7 +30,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
       fill={COLORS[index % COLORS.length]}
       textAnchor={x > cx ? 'start' : 'end'}
       dominantBaseline="central"
-      fontSize={10} // Adjust font size if necessary
+      fontSize={10} 
     >
       {`${initialData[index].name} ${(percent * 100).toFixed(0)}%`}
     </text>
@@ -87,7 +87,7 @@ const App = () => {
                 cy="50%"
                 labelLine={false}
                 label={renderCustomizedLabel}
-                outerRadius={145} // Reduce the size of the pie chart
+                outerRadius={145} 
                 fill="#8884d8"
                 dataKey="allocated"
                 onClick={(data, index) => handleChartClick(data, index)}
@@ -150,10 +150,10 @@ const EditPopupMenu = ({ onClose, clickedCategory, updateCategory }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Submitting edited category:', editedCategory);
-    updateCategory(editedCategory); // Call updateCategory with editedCategory
+    updateCategory(editedCategory); 
   };
 
-  // Make sure to update editedCategory when clickedCategory changes
+ 
   useEffect(() => {
     setEditedCategory(clickedCategory);
     console.log('clickedCategory updated:', clickedCategory);
@@ -204,7 +204,7 @@ const AddPopupMenu = ({ onClose, addCategory }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Adding new category:', newCategory);
-    addCategory(newCategory); // Call addCategory with newCategory
+    addCategory(newCategory); 
   };
 
   return (

@@ -96,7 +96,7 @@ input[type="text"] {
 }
 
 .submit-button:hover {
-    background-color: #4A7D4E; /* Darker green on hover */
+    background-color: #4A7D4E; 
 }
 
 .bank-images {

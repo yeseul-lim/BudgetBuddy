@@ -208,20 +208,20 @@ const Expense = () => {
               ))}
             </tbody>
           </table>
-          </div>
-  ) : (
-    <div className="calendar-view">
-      <img src="expense_cal.png" alt="" id="expense_cal_img" />
-    </div>
-  )}
+        </div>
+      ) : (
+        <div className="calendar-view">
+          <img src="expense_cal.png" alt="" id="expense_cal_img" />
+        </div>
+      )}
 
-  <Popup
-    show={showModal}
-    handleClose={() => setShowModal(false)}
-    addTransaction={addTransaction}
-  />
-</div>
-);
+      <Popup
+        show={showModal}
+        handleClose={() => setShowModal(false)}
+        addTransaction={addTransaction}
+      />
+    </div>
+  );
 };
 
 export default Expense;

@@ -54,12 +54,12 @@ const AddAccount = () => {
                 <section className="add-account-section">
                     <div className="find-bank">
                         <div className="bank-images">
-                            <img src="/Chase.png" alt="Bank 1" draggable onDragStart={(e) => handleDragStart(e, "1")} />
-                            <img src="/BOA.png" alt="Bank 2" draggable onDragStart={(e) => handleDragStart(e, "2")} />
-                            <img src="/wellsfargo.png" alt="Bank 3" draggable onDragStart={(e) => handleDragStart(e, "3")} />
-                            <img src="/amex.png" alt="Bank 4" draggable onDragStart={(e) => handleDragStart(e, "4")} />
-                            <img src="/citi.png" alt="Bank 5" draggable onDragStart={(e) => handleDragStart(e, "5")} />
-                            <img src="/usbank.png" alt="Bank 6" draggable onDragStart={(e) => handleDragStart(e, "6")} />
+                            <img src="/Chase.png" alt="Chase" draggable onDragStart={(e) => handleDragStart(e, "1")} />
+                            <img src="/BOA.png" alt="Bank of America" draggable onDragStart={(e) => handleDragStart(e, "2")} />
+                            <img src="/wellsfargo.png" alt="Wells Fargo" draggable onDragStart={(e) => handleDragStart(e, "3")} />
+                            <img src="/amex.png" alt="American Express" draggable onDragStart={(e) => handleDragStart(e, "4")} />
+                            <img src="/citi.png" alt="Citi" draggable onDragStart={(e) => handleDragStart(e, "5")} />
+                            <img src="/usbank.png" alt="US Bank" draggable onDragStart={(e) => handleDragStart(e, "6")} />
                         </div>
                         <div
                             className="drop-box"

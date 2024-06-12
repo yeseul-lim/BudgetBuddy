@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-import './budget.css'; 
+import './budget.css';
 
 const initialData = [
   { name: 'Rent', allocated: 1000, used: 950 },
@@ -30,7 +30,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
       fill={COLORS[index % COLORS.length]}
       textAnchor={x > cx ? 'start' : 'end'}
       dominantBaseline="central"
-      fontSize={10} 
+      fontSize={10}
     >
       {`${initialData[index].name} ${(percent * 100).toFixed(0)}%`}
     </text>
@@ -87,7 +87,7 @@ const App = () => {
                 cy="50%"
                 labelLine={false}
                 label={renderCustomizedLabel}
-                outerRadius={145} 
+                outerRadius={145}
                 fill="#8884d8"
                 dataKey="allocated"
                 onClick={(data, index) => handleChartClick(data, index)}
@@ -150,10 +150,9 @@ const EditPopupMenu = ({ onClose, clickedCategory, updateCategory }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Submitting edited category:', editedCategory);
-    updateCategory(editedCategory); 
+    updateCategory(editedCategory);
   };
 
- 
   useEffect(() => {
     setEditedCategory(clickedCategory);
     console.log('clickedCategory updated:', clickedCategory);
@@ -204,7 +203,7 @@ const AddPopupMenu = ({ onClose, addCategory }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Adding new category:', newCategory);
-    addCategory(newCategory); 
+    addCategory(newCategory);
   };
 
   return (

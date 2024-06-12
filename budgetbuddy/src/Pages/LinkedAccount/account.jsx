@@ -47,7 +47,6 @@ const Account = () => {
                         </div>
                     </div>
                 </section>
-
             </div>
             <Link to="/addAccount" className="add-account-button">+ Add Account</Link>
         </div>

@@ -1,83 +1,83 @@
 .App {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  
-  .chart-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  .chart {
-    position: relative;
-    width: 500px; 
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .chart svg {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .table {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .table table {
-    width: 50%; 
-    border-collapse: collapse;
-  }
-  
-  .table th, .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .table th {
-    background-color: #f2f2f2;
-  }
-  
-  .popup {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .popup-menu {
-    background: #4CAF50;
-    padding: 20px;
-    border-radius: 5px;
-    width: 300px;
-    text-align: left;
-  }
-  
-  .popup-menu h3 {
-    margin-top: 0;
-  }
-  
-  .popup-menu form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .popup-menu label {
-    margin-bottom: 10px;
-  }
-  
-  .popup-menu button {
-    margin-top: 10px;
-  }
-  
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.chart-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.chart {
+  position: relative;
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.chart svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.table {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.table table {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-menu {
+  background: #4CAF50;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: left;
+}
+
+.popup-menu h3 {
+  margin-top: 0;
+}
+
+.popup-menu form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-menu label {
+  margin-bottom: 10px;
+}
+
+.popup-menu button {
+  margin-top: 10px;
+}

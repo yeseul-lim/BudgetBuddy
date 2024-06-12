@@ -1,4 +1,3 @@
-// src/components/Header.js
 import React from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
@@ -6,9 +5,9 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header>
-    <img src="logo.png" alt="" />
+      <img src="logo.png" alt="Logo" />
 
-    <nav className="nav-links">
+      <nav className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/expense">Expense</Link>
         <Link to="/budget">Budget</Link>

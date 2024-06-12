@@ -1,27 +1,24 @@
-/* src/components/Header.css */
-
 header {
-    background-color: #59A460; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    color: white;
-    font-family: Arial, sans-serif;
+  background-color: #59A460;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  font-family: Arial, sans-serif;
+}
 
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 9rem;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.3rem;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
+.nav-links {
+  display: flex;
+  gap: 9rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}

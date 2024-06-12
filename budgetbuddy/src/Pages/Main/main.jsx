@@ -32,8 +32,8 @@ const Main = () => {
                 <div className="main-text2">$1,835.90</div>
             </div>
             <div className="column">
-            <div className="main-text">Budget Left</div>
-            <div className="main-text2">$1,435.10</div>
+                <div className="main-text">Budget Left</div>
+                <div className="main-text2">$1,435.10</div>
             </div>
             <div className="image-container">
                 <img src="/ProgressIndicator.png" alt="Progress Indicator" />

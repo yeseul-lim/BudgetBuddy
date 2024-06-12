@@ -4,6 +4,7 @@ import Account from "./Pages/LinkedAccount/account.jsx";
 import AddAccount from "./Pages/AddAccount/addAccount.jsx";
 import Expense from "./Pages/Expense/expense.jsx";
 import Budget from "./Pages/Budget/budget.jsx";
+import Login from "./Pages/Login/login.jsx";
 import Header from "./Components/organisms/Header/header.jsx";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/addAccount" element={<AddAccount />} />
         <Route path="/expense" element={<Expense />} />
         <Route path="/budget" element={<Budget />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
